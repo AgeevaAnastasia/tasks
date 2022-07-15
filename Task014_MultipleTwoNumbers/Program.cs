@@ -15,3 +15,9 @@ int Multiple(int number)
     if (num % 7 == 0 && num % 23 == 0) res = 1;
     return res;
 }
+
+// еще вариант:
+// int sum1 = num % 7;
+// int sum2 = num % 23;
+// if (sum1 == 0 && sum2 == 0 && mun != 0) Console.WriteLine($"Число {num} кратно одновременно 7 и 23");
+// if (sum1 != 0 || sum2 != 0 || num == 0) ($"Число {num} не кратно одновременно 7 и 23");
