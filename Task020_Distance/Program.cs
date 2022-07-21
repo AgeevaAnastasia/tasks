@@ -13,11 +13,11 @@ int bx = Convert.ToInt32(Console.ReadLine());
 Console.Write("y: ");
 int by = Convert.ToInt32(Console.ReadLine());
 
-double Distance(int axc, int ayc, int bxc, int byc)
+double GetDistance(int axc, int ayc, int bxc, int byc)
 {
-    double res = Math.Sqrt(Math.Pow((bxc - axc),2)+Math.Pow((byc - ayc),2));
-    return (res);
+    return Math.Round(Math.Sqrt(Math.Pow((bxc - axc),2)+Math.Pow((byc - ayc),2)), 2, MidpointRounding.ToZero); // MidpoinRounding.ToZero - 
+    //отбрасывает цифры после 2 после запятой, не округляя их (а иначе 5,1 получается)
 }
 
-double result = Distance(ax, ay, bx, by);
-Console.WriteLine($"A({ax}, {ay}), B({bx}, {by}) -> {Math.Round(result, 2)}");
+double result = GetDistance(ax, ay, bx, by);
+Console.WriteLine($"A({ax}, {ay}), B({bx}, {by}) -> {result}");
