@@ -7,11 +7,16 @@ Console.WriteLine("Введите целое положительное числ
 int n = Int32.Parse(Console.ReadLine());
 if (n > 0)
 {
-    int sum = 0;
-    for (int i = 0; i <= n; i++)
+    int GetSum(int num)
     {
-        sum = sum + i;
+        int sum = 0;
+        for (int i = 0; i <= n; i++)
+        {
+            sum = sum + i;
+        }
+        return sum;
     }
-    Console.WriteLine($"{n} -> {sum}");
+    int res = GetSum(n);
+    Console.WriteLine($"{n} -> {res}");
 }
 else Console.WriteLine("Вы ввели нерелевантное число");
