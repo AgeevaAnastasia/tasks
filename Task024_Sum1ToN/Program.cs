@@ -10,13 +10,13 @@ if (n > 0)
     int GetSum(int num)
     {
         int sum = 0;
-        for (int i = 0; i <= n; i++)
+        for (int i = 1; i <= n; i++)
         {
             sum = sum + i;
         }
         return sum;
     }
     int res = GetSum(n);
-    Console.WriteLine($"{n} -> {res}");
+    Console.WriteLine($"Сумма чисел от 1 до {n} = {res}");
 }
 else Console.WriteLine("Вы ввели нерелевантное число");
