@@ -33,23 +33,23 @@ void PrintArray(int[]arr1)
     }
 }
 
-void DigitSearch(int[] arr2, int digit)
+int res = DigitSearch(arr2, int digit)
 {
     int sum = 0;
     for (int i = 0; i < arr2.Length; i++)
     {
         if (arr2[i] == digit) sum += 1;
     }
-    if (sum == 0) Console.WriteLine(" такого числа нет");
-    else Console.WriteLine(" такое число есть");
+    return sum;
 }
 
 Console.WriteLine("=====================================================================");
 Console.Write($"Ваше число {userDigit}; в сгенерированном массиве ");
 int[] array = FillArrayRnd (userSize, userMin, userMax);
 PrintArray(array);
-DigitSearch(array, userDigit);
-
+result = DigitSearch(array, userDigit);
+if (result == 0) Console.WriteLine(" такого числа нет");
+else Console.WriteLine(" такое число есть");
 
 Console.WriteLine();
 Console.WriteLine();
