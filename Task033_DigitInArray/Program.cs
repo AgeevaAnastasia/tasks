@@ -33,7 +33,7 @@ void PrintArray(int[]arr1)
     }
 }
 
-int res = DigitSearch(arr2, int digit)
+int DigitSearch(int[] arr2, int digit)
 {
     int sum = 0;
     for (int i = 0; i < arr2.Length; i++)
@@ -47,7 +47,7 @@ Console.WriteLine("=============================================================
 Console.Write($"Ваше число {userDigit}; в сгенерированном массиве ");
 int[] array = FillArrayRnd (userSize, userMin, userMax);
 PrintArray(array);
-result = DigitSearch(array, userDigit);
+int result = DigitSearch(array, userDigit);
 if (result == 0) Console.WriteLine(" такого числа нет");
 else Console.WriteLine(" такое число есть");
 
