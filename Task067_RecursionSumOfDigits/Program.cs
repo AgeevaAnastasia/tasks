@@ -5,18 +5,20 @@
 Console.Clear();
 int numUser = InputNumbers("Введите число: ");
 
-int sum = 0;
+
 Console.Write($"{numUser} -> "); 
-Console.Write(GetSumOfDigits(numUser, sum));
+Console.Write(GetSumOfDigits(numUser));
 Console.WriteLine();
 
-
-int GetSumOfDigits(int num, int sum)
+int GetSumOfDigits(int num)
 {
-    if (num == 0) return sum;
-    sum = sum + num % 10;
-    return GetSumOfDigits(num / 10, sum);
+    int sum = num % 10;
+    if (sum >= 1)
+        sum += GetSumOfDigits(num / 10);
+
+    return sum;
 }
+
 
 int InputNumbers(string input)
 {

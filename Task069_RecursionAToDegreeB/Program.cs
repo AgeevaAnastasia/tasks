@@ -7,20 +7,16 @@ Console.Clear();
 int aUser = InputNumbers("Введите число: ");
 int bUser = InputNumbers("Введите степень числа: ");
 
-int sum = 1;
-Console.Write($"{aUser} в степени {bUser} равно ");
-Console.Write(GetDegree(aUser, bUser, sum));
-Console.WriteLine();
 
-int GetDegree(int a, int b, int sum)
+
+int GetDegree(int a, int b)
 {
-    if (b == 0) return sum;
-    sum = sum * a;
-    return GetDegree(a, b - 1, sum);
+    if (b == 0) return 1;
+    return GetDegree(a, b - 1) * a;
 }
 
-
-
+if (bUser >= 0) Console.WriteLine($"{aUser} в степени {bUser} равно {GetDegree(aUser, bUser)}");
+else Console.WriteLine("Степень должна быть натуральна");
 
 
 int InputNumbers(string input)
