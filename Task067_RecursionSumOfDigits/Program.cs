@@ -3,19 +3,19 @@
 // 45 -> 9
 
 Console.Clear();
-int numUser = InputNumbers("Введите число: ")
+int numUser = InputNumbers("Введите число: ");
 
-Console.Write($"{numUser} -> ");
-int res = GetSumOfDigits(numUser);
-Console.Write(res);
+int sum = 0;
+Console.Write($"{numUser} -> "); 
+Console.Write(GetSumOfDigits(numUser, sum));
 Console.WriteLine();
 
-int GetSumOfDigits(int num)
+
+int GetSumOfDigits(int num, int sum)
 {
-    int sum = 0;
     if (num == 0) return sum;
-    GetSumOfDigits(num / 10);
-    sum = sum + numUser % 10;
+    sum = sum + num % 10;
+    return GetSumOfDigits(num / 10, sum);
 }
 
 int InputNumbers(string input)
